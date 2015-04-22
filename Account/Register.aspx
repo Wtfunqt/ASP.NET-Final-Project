@@ -37,6 +37,7 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:SqlDataSource runat="server" ID="SQLDataSourceRegister" ConnectionString="<%$ ConnectionString:DefaultConnection %>" InsertCommand="insert into accounts (username, password, usertype) values ('@UserName', '@Password', 0)"></asp:SqlDataSource>
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button ID="Button1" runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>

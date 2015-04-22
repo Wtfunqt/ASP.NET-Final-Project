@@ -2,6 +2,8 @@
 using System;
 using System.Linq;
 using System.Web.UI;
+using System.Web;
+using System.Web.UI.WebControls;
 using ASP_Project;
 
 public partial class Account_Register : Page
