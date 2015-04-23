@@ -8,11 +8,11 @@
             <asp:BoundField DataField="title" HeaderText="Title of the Movie" SortExpression="title" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="select title from allmovies a join genres g on a.id = g.id where (g.genre = @genre)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="select title from allmovies a join genres g on a.id = g.id where (g.genre = @genre)">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList1" DefaultValue="comedy" Name="genre" PropertyName="SelectedValue" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT DISTINCT [genre] FROM [genres] ORDER BY [genre]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="SELECT DISTINCT [genre] FROM [genres] ORDER BY [genre]"></asp:SqlDataSource>
 </asp:Content>
 
