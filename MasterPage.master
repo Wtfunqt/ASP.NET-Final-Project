@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
+    1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Webio</title>
+    <script type="text/javascript" src="JavaScript/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript">
+        function mainmenu() {
+            $(" #nav ul ").css({ display: "none" });
+
+            $(" #nav li").hover(function () {
+                $(this).find('ul:first').css({ visibility: "visible", display: "none" }).show(400);
+            }
+            , function () {
+                $(this).find('ul:first').css({ visibility: "hidden" });
+            });
+        }
+
+        $(document).ready(function () {
+            mainmenu();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="Styles/StyleSheet.css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="banner">
+            
+            </div>
+
+            <div id="navigation">
+                <ul id="nav">
+                    <li><a href="Home.aspx">Home</a></li>
+                    <li><a href="Videos.aspx">Videos</a>
+                        <ul>
+                            <li><a href="VideoName.aspx">Search by Name</a></li>
+                            <li><a href="VideoYear.aspx">Search by Year</a></li>
+                            <li><a href="VideoGenre.aspx">Search by Genre</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Playlist.aspx">Playlist</a></li>
+                    <li><a href="About.aspx">About</a></li>
+                </ul>
+            </div>
+
+            <div id="content_area">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <div id ="sidebar">
+
+            </div>
+
+            <div id="footer">
+                <p>All rights reserved by Sanjay.</p>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
