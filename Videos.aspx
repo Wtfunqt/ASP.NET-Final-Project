@@ -41,7 +41,7 @@
     <br />
     <br />
     <br />
-        <asp:SqlDataSource ID="SqlDataSourceMoviesByGenre" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="select title from allmovies a join genres g on a.id = g.id where (g.genre = @genre)" >
+        <asp:SqlDataSource ID="SqlDataSourceMoviesByGenre" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="select title from allmovies a join genres g on a.id = g.id where (g.genre = @genre)" >
             <SelectParameters>
                 <asp:ControlParameter ControlID="dropDownGenres" DefaultValue="drama" Name="genre"  PropertyName="SelectedValue" Type="String" />
             </SelectParameters>

@@ -37,11 +37,18 @@
             </div>
         </div>
         <div class="form-group">
-            <asp:SqlDataSource runat="server" ID="SQLDataSourceRegister" ConnectionString="<%$ ConnectionString:DefaultConnection %>" InsertCommand="insert into accounts (username, password, usertype) values ('@UserName', '@Password', 0)"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SQLDataSourceRegister" 
+                ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" 
+                InsertCommand="insert into accounts (username, password, usertype) values (@UserName, @Password, 1)">
+                <insertparameters>
+            <asp:formparameter name="UserName" formfield="UserName" />
+            <asp:formparameter name="Password"  formfield="Password" />
+          </insertparameters>
+            </asp:SqlDataSource>
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button ID="Button1" runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+                <asp:Button ID="btnInsert" runat="server" Text="INSERT" CssClass="btn btn-default" OnClick="btnInsert_Click" />
             </div>
         </div>
     </div>
 </asp:Content>
-

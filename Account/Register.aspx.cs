@@ -23,4 +23,8 @@ public partial class Account_Register : Page
             ErrorMessage.Text = result.Errors.FirstOrDefault();
         }
     }
+    protected void btnInsert_Click(object sender, EventArgs e)
+    {
+        SQLDataSourceRegister.Insert();
+    }
 }
