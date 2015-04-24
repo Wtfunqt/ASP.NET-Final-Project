@@ -64,6 +64,10 @@
     color: lightblue;
 }
 
+#Login {
+    flex-align:end;
+}
+
 
 #content_area {
     float: left;

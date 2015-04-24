@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="VideoYear.aspx.cs" Inherits="VideoYear" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="VideoYear.aspx.cs" Inherits="VideoYear" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="prodyear" DataValueField="prodyear" AutoPostBack="True">
     </asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="select title from allmovies where (prodyear = @prodyear)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="select title from allmovies where (prodyear = @prodyear)">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1990" Name="prodyear" PropertyName="SelectedValue" />
         </SelectParameters>
@@ -13,6 +13,6 @@
             <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="SELECT DISTINCT [prodyear] FROM [allmovies]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT DISTINCT [prodyear] FROM [allmovies]"></asp:SqlDataSource>
     </asp:Content>
 
