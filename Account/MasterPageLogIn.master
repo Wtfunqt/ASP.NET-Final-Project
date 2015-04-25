@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageLogIn.master.cs" Inherits="Account_MasterPageLogIn" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
+    1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title> Webio</title>
+    <script type="text/javascript" src="../JavaScript/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript">
+        function mainmenu() {
+            $(" #nav ul ").css({ display: "none" });
+
+            $(" #nav li").hover(function () {
+                $(this).find('ul:first').css({ visibility: "visible", display: "none" }).show(400);
+            }
+            , function () {
+                $(this).find('ul:first').css({ visibility: "hidden" });
+            });
+        }
+
+        $(document).ready(function () {
+            mainmenu();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleSheet.css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <asp:Label ID="lblLogin" runat="server" ForeColor="#0000ff" Font-Size="X-Large" Text=""></asp:Label>
+            <div id="banner">
+            
+            </div>
+
+            <div id="navigation">
+                <ul id="nav">
+                    <li><a href="../Pages/Home.aspx">Home</a></li>
+                    <li><a href="../Pages/Videos.aspx">Videos</a>
+                        <ul>
+                            <li><a href="../Pages/VideoName.aspx">Search by Name</a></li>
+                            <li><a href="../Pages/VideoYear.aspx">Search by Year</a></li>
+                            <li><a href="../Pages/VideoGenre.aspx">Search by Genre</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Pages/Playlist.aspx">Playlist</a></li>
+                    <li><a href="../Pages/About.aspx">About</a></li>
+                    <li><asp:LinkButton ID="lBtnLogin" runat="server" PostBackUrl="~/Account/Login.aspx" CausesValidation="False">Login</asp:LinkButton></li>
+                </ul>
+            </div>
+            <div id="content_area">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <div id ="sidebar">
+
+            </div>
+
+            <div id="footer">
+                <p>All rights reserved by Sanjay.</p>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

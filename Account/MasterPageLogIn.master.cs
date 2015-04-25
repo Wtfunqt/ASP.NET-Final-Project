@@ -5,13 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Playlist : System.Web.UI.Page
+public partial class Account_MasterPageLogIn : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if ((string)Session["type"] != "user")
-        {
-            Response.Redirect("~/Pages/PlaylistLogin.aspx");
-        }
+
     }
 }
