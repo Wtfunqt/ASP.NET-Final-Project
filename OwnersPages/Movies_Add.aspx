@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/MasterPageCMS.master" AutoEventWireup="true" CodeFile="Movies_Add.aspx.cs" Inherits="Movies_Add" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/OwnersPages/MasterPageOwner.master" AutoEventWireup="true" CodeFile="Movies_Add.aspx.cs" Inherits="Movies_Add" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1>Add Movie into the List of Movies</h1>

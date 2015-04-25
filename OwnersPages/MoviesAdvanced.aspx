@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/MasterPageCMS.master" AutoEventWireup="true" CodeFile="MoviesAdvanced.aspx.cs" Inherits="Styles_MoviesDescription" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/OwnersPages/MasterPageOwner.master" AutoEventWireup="true" CodeFile="MoviesAdvanced.aspx.cs" Inherits="Styles_MoviesDescription" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1>MovieList</h1>
-    <asp:Button ID="btnAddMovie" runat="server" PostBackUrl="~/Movies_Add.aspx" Text="Add new Movie"></asp:Button>
+    <asp:Button ID="btnAddMovie" runat="server" PostBackUrl="~/AdminPages/Movies_Add.aspx" Text="Add new Movie"></asp:Button>
     <br />
     <br />
     <br />

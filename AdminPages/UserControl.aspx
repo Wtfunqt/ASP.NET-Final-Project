@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/MasterPageCMS.master" AutoEventWireup="true" CodeFile="UserControl.aspx.cs" Inherits="UserControl" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="UserControl.aspx.cs" Inherits="UserControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource1">
@@ -19,7 +19,7 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" DeleteCommand="DELETE FROM [accounts] WHERE [id] = @id" InsertCommand="INSERT INTO [accounts] ([username], [password], [usertype]) VALUES (@username, @password, @usertype)" SelectCommand="SELECT * FROM [accounts] WHERE ([usertype] = @usertype)" UpdateCommand="UPDATE [accounts] SET [username] = @username, [password] = @password, [usertype] = @usertype WHERE [id] = @id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" DeleteCommand="DELETE FROM [accounts] WHERE [id] = @id" InsertCommand="INSERT INTO [accounts] ([username], [password], [usertype]) VALUES (@username, @password, @usertype)" SelectCommand="SELECT * FROM [accounts] WHERE ([usertype] = 'user' or [usertype] = 'owner')" UpdateCommand="UPDATE [accounts] SET [username] = @username, [password] = @password, [usertype] = @usertype WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>
@@ -28,9 +28,6 @@
             <asp:Parameter Name="password" Type="String" />
             <asp:Parameter Name="usertype" Type="String" />
         </InsertParameters>
-        <SelectParameters>
-            <asp:SessionParameter DefaultValue="user" Name="usertype" SessionField="userType" Type="String" />
-        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="username" Type="String" />
             <asp:Parameter Name="password" Type="String" />
