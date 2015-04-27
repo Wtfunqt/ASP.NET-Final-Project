@@ -11,19 +11,15 @@
     
     
     
-    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT * FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
+    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT [title], [prodyear] FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtName" DefaultValue="default" Name="title" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSourceForName">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSourceForName">
         <Columns>
-            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
             <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
             <asp:BoundField DataField="prodyear" HeaderText="prodyear" SortExpression="prodyear" />
-            <asp:BoundField DataField="company" HeaderText="company" SortExpression="company" />
-            <asp:BoundField DataField="director" HeaderText="director" SortExpression="director" />
-            <asp:BoundField DataField="editor" HeaderText="editor" SortExpression="editor" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#000066" />
         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
