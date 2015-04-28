@@ -10,7 +10,7 @@ using System.Configuration;
 public partial class Movies_Add : System.Web.UI.Page
 {
 
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AdemirDBConnectionString"].ConnectionString);
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SanjayDBConnectionString"].ConnectionString);
 
     protected void Page_Load(object sender, EventArgs e)
     {

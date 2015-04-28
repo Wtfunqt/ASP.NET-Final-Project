@@ -19,7 +19,7 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" DeleteCommand="DELETE FROM [accounts] WHERE [id] = @id" InsertCommand="INSERT INTO [accounts] ([username], [password], [usertype]) VALUES (@username, @password, @usertype)" SelectCommand="SELECT * FROM [accounts] WHERE ([usertype] = 'user' or [usertype] = 'owner')" UpdateCommand="UPDATE [accounts] SET [username] = @username, [password] = @password, [usertype] = @usertype WHERE [id] = @id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" DeleteCommand="DELETE FROM [accounts] WHERE [id] = @id" InsertCommand="INSERT INTO [accounts] ([username], [password], [usertype]) VALUES (@username, @password, @usertype)" SelectCommand="SELECT * FROM [accounts] WHERE ([usertype] = 'user' or [usertype] = 'owner')" UpdateCommand="UPDATE [accounts] SET [username] = @username, [password] = @password, [usertype] = @usertype WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>

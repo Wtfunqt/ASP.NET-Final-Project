@@ -15,14 +15,14 @@ public static class ConnectionClass
 
     static ConnectionClass()
     {
-        String connectionString = ConfigurationManager.ConnectionStrings["AdemirDBConnectionString"].ToString();
+        String connectionString = ConfigurationManager.ConnectionStrings["SanjayDBConnectionString"].ToString();
         con = new SqlConnection(connectionString);
         com = new SqlCommand("", con);
     }
 
     public static Account LoginUser(string login, string password)
     {
-        string query = string.Format("select count(*) from AdemirDB.dbo.accounts where username = '{0}'",login);
+        string query = string.Format("select count(*) from SanjayDB.dbo.accounts where username = '{0}'",login);
         com.CommandText = query;
 
         try
@@ -32,13 +32,13 @@ public static class ConnectionClass
 
             if (amountOfUsers == 1)
             {
-                query = string.Format("select password from AdemirDB.dbo.accounts where username = '{0}'", login);
+                query = string.Format("select password from SanjayDB.dbo.accounts where username = '{0}'", login);
                 com.CommandText = query;
                 string pass = com.ExecuteScalar().ToString();
 
                 if (pass == password)
                 {
-                    query = string.Format("select usertype from AdemirDB.dbo.accounts where username = '{0}'", login);
+                    query = string.Format("select usertype from SanjayDB.dbo.accounts where username = '{0}'", login);
                     com.CommandText = query;
                     SqlDataReader reader = com.ExecuteReader();
                     Account account = null;
@@ -68,7 +68,7 @@ public static class ConnectionClass
 
     public static string RegisterUser(Account account)
     {
-        String query = String.Format("select count(*) from AdemirDB.dbo.accounts where username = '{0}'", account.UserName);
+        String query = String.Format("select count(*) from SanjayDB.dbo.accounts where username = '{0}'", account.UserName);
         com.CommandText = query;
 
         try
@@ -78,7 +78,7 @@ public static class ConnectionClass
 
             if (amountOfUsers < 1)
             {
-                query = string.Format("insert into AdemirDB.dbo.accounts values ('{0}', '{1}', '{2}')", account.UserName, account.Password, account.UserType);
+                query = string.Format("insert into SanjayDB.dbo.accounts values ('{0}', '{1}', '{2}')", account.UserName, account.Password, account.UserType);
                 com.CommandText = query;
                 com.ExecuteNonQuery();
                 return "User registered!";

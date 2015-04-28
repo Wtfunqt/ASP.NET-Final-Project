@@ -83,7 +83,7 @@
     height: 400px;
     margin: 20px 10px 20px 10px;
     border: 3px solid #E3E3E3;
-
+    overflow:auto;
 }
 
 #footer {

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Label ID="lblName" runat="server" Text="Movie Name: "></asp:Label>
-    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtName" runat="server" OnTextChanged="txtName_TextChanged"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName"
                                 ErrorMessage="Please enter a movie title." />
                         
@@ -11,13 +11,15 @@
     
     
     
-    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT [title], [prodyear] FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
+    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="SELECT [id], [title], [prodyear] FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtName" DefaultValue="default" Name="title" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSourceForName">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSourceForName" DataKeyNames="id">
         <Columns>
+            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" ReadOnly="True" />
             <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
             <asp:BoundField DataField="prodyear" HeaderText="prodyear" SortExpression="prodyear" />
         </Columns>
@@ -31,5 +33,12 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
+    <asp:Button ID="btnAddToList" runat="server" Text="Add to Playlist" OnClick="btnAddToList_Click" />
+    <br />
+    <br />
+
+    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    <br />
+    <asp:Label ID="lblSelectSomething" runat="server" Text="Label" Visible="False"></asp:Label>
 </asp:Content>
 
