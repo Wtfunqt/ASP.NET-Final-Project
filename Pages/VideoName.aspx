@@ -11,7 +11,7 @@
     
     
     
-    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" SelectCommand="SELECT [id], [title], [prodyear] FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
+    <asp:SqlDataSource ID="SqlDataSourceForName" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="SELECT [id], [title], [prodyear] FROM [allmovies] WHERE ([title] LIKE '%' + @title + '%')">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtName" DefaultValue="default" Name="title" PropertyName="Text" Type="String" />
         </SelectParameters>

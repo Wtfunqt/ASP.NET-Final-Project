@@ -14,7 +14,7 @@ public partial class VideoGenre : System.Web.UI.Page
     /// /////////////////////////////
     /// </summary>
 
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SanjayDBConnectionString"].ConnectionString);
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AdemirDBConnectionString"].ConnectionString);
     SqlCommand command = new SqlCommand();
     protected void Page_Load(object sender, EventArgs e)
     {

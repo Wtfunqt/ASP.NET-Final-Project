@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class VideoName : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SanjayDBConnectionString"].ConnectionString);
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AdemirDBConnectionString"].ConnectionString);
     SqlCommand command = new SqlCommand();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -30,13 +30,12 @@ public partial class VideoName : System.Web.UI.Page
             else
             {
                 lblSelectSomething.Text = "";
-                 if (GridView1.SelectedIndex == -1)
+                if (GridView1.SelectedIndex == -1)
                 {
                     lblSelectSomething.Text = "Please select a movie";
                     lblSelectSomething.Visible = true;
                 }
                 else
-                
                 {
                     int userId = 0;
                     command = new SqlCommand("SELECT id from accounts where username = '" +
@@ -70,10 +69,11 @@ public partial class VideoName : System.Web.UI.Page
                     //txtEditor.Text = "";
                     lblSelectSomething.Text = GridView1.SelectedRow.Cells[2].Text + " added to the Playlisy";
                     lblSelectSomething.Visible = true;
-                 }
+                }
             }
         }
     }
+
 
     protected void txtName_TextChanged(object sender, EventArgs e)
     {

@@ -15,7 +15,7 @@ public partial class Account_Login : System.Web.UI.Page
     {
         Account account = ConnectionClass.LoginUser(txtName.Text, txtPassword.Text);
 
-        if (User != null)
+        if (account != null)
         {
             Session["login"] = account.UserName;
             Session["type"] = account.UserType;

@@ -68,7 +68,7 @@
     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     <br />
     <asp:Button ID="btnAdd" runat="server" Text="Add Movie" OnClick="btnAdd_Click"/>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SanjayDBConnectionString %>" DeleteCommand="DELETE FROM [allmovies] WHERE [id] = @id" InsertCommand="INSERT INTO [allmovies] ([title], [prodyear], [company], [director], [editor]) VALUES (@title, @prodyear, @company, @director, @editor)" SelectCommand="SELECT * FROM [allmovies]" UpdateCommand="UPDATE [allmovies] SET [title] = @title, [prodyear] = @prodyear, [company] = @company, [director] = @director, [editor] = @editor WHERE [id] = @id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" DeleteCommand="DELETE FROM [allmovies] WHERE [id] = @id" InsertCommand="INSERT INTO [allmovies] ([title], [prodyear], [company], [director], [editor]) VALUES (@title, @prodyear, @company, @director, @editor)" SelectCommand="SELECT * FROM [allmovies]" UpdateCommand="UPDATE [allmovies] SET [title] = @title, [prodyear] = @prodyear, [company] = @company, [director] = @director, [editor] = @editor WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>

@@ -2,10 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="select am.title, am.prodyear, replace(am.company, '\r\n', ','), am.director, am.editor, s.summary from AdemirDB.dbo.summaries s join AdemirDB.dbo.allmovies am on s.id=am.id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AdemirDBConnectionString %>" SelectCommand="select am.id, am.title, am.prodyear, replace(am.company, '\r\n', ','), am.director, am.editor, s.summary from AdemirDB.dbo.summaries s join AdemirDB.dbo.allmovies am on s.id=am.id"></asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" DataKeyNames="id">
         <Columns>
+            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
             <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
             <asp:BoundField DataField="prodyear" HeaderText="prodyear" SortExpression="prodyear" />
             <asp:BoundField DataField="Column1" HeaderText="Column1" SortExpression="Column1" ReadOnly="True" />
@@ -23,6 +25,11 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
+
+    <asp:Button ID="btnAddToPlaylist" runat="server" Text="Add To Playlist" OnClick="btnAddToPlaylist_Click" />
+    <br /> 
+    <asp:Label ID="lblSelectSomething" runat="server" Text="Label" Visible="False"></asp:Label>
+    <br /><asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
 
 </asp:Content>
 
