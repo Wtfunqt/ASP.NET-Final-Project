@@ -72,6 +72,7 @@ public partial class Playlist : System.Web.UI.Page
 
                 lblSelectSomething.Text = GridView1.SelectedRow.Cells[1].Text + " was deleted from Playlist";
                 lblSelectSomething.Visible = true;
+                Response.Redirect("~/Pages/Playlist.aspx");
               
             }
         }

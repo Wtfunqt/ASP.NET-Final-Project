@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+    </asp:SiteMapPath>
     <img src ="~/Images/youreinthemovieslogo490.jpg" runat="server" class="imgLeft" aria-haspopup="False" />
     <p>
        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus convallis nunc, sit amet hendrerit nisi mollis eget. Nulla placerat arcu ex, vel ornare neque suscipit tincidunt. Sed in dui accumsan, maximus ipsum sit amet, mollis lectus. Donec mattis quam eu vehicula maximus. Sed mauris mauris, tristique ac bibendum sit amet, finibus in ante. In blandit urna vel sapien molestie, eget molestie odio accumsan. Sed ligula ligula, vulputate vel dignissim at, feugiat sit amet risus. Phasellus sapien tortor, eleifend dignissim augue sed, ultricies varius libero. Suspendisse venenatis enim eget purus bibendum lobortis. Integer sit amet lorem condimentum turpis tempus interdum. Nam id pretium sapien.    
