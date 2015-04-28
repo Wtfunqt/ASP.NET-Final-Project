@@ -20,6 +20,7 @@ public partial class Account_Login : System.Web.UI.Page
             Session["login"] = account.UserName;
             Session["type"] = account.UserType;
 
+
             Response.Redirect("../AdminPages/HomeAdmin.aspx");
         }
         else
