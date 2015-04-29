@@ -38,9 +38,6 @@
                     <li><a href="MoviesAdvanced.aspx">Manage Movies</a>
                         <ul>
                             <li><a href="Movies_Add.aspx">Add new Movie</a></li>
-                            <li><a href="MoviesName.aspx">Search by Name</a></li>
-                            <li><a href="MoviesYear.aspx">Search by Year</a></li>
-                            <li><a href="moviesGenre.aspx">Search by Genre</a></li>
                         </ul>
                     </li>
                     <li><asp:LinkButton ID="btnLogout" Text="Logout" runat="server" OnClick="Unnamed1_Click"/></li>

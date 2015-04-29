@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Account/MasterPageLogIn.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<table>
+    <table>
     <tr>
         <td style="width: 142px">
             <strong>Name:</strong>
@@ -27,13 +27,14 @@
         <td style="width: 349px">
             <asp:TextBox ID="txtRegConfPassword" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="ReqValidConfPass" runat="server" ControlToValidate="txtRegConfPassword" ErrorMessage="Please confirm your password by entering it again"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="ComValidRegPass" runat="server" ControlToCompare="txtRegConfPassword" ControlToValidate="txtRegPassword" ErrorMessage="Passwords must match"></asp:CompareValidator>
         </td>
     </tr>
     <tr>
         <td style="width: 142px">
             <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click"/>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" PostBackUrl="~/Account/Login.aspx" CausesValidation="false" />
             <asp:Label ID="lblRegResult" runat="server" Text=""></asp:Label>
+            <asp:CompareValidator ID="ComValidRegPass" runat="server" ControlToCompare="txtRegConfPassword" ControlToValidate="txtRegPassword" ErrorMessage="Passwords must match"></asp:CompareValidator>
         </td>
     </tr>
 </table>

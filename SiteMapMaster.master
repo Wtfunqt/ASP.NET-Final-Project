@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMapMaster.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
+    1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title> Webio</title>
+<link rel="stylesheet" type="text/css" href="Styles/StyleSheet.css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="banner">
+            
+            </div>
+
+            <div id="navigation">
+            </div>
+
+            <div id="content_area">
+                <div>Sitemap Test</div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <div id="footer">
+                <p>All rights reserved by Webio.</p>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

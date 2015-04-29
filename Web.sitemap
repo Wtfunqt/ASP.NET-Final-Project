@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode title="Webio">
-    <siteMapNode url="Home.aspx" title="Home"  description="This is the Home Page">
-      <siteMapNode url="About.aspx" title="About"  description="This is the About Page" />
+    <siteMapNode url="~/SiteMap.aspx" title="Sitemap Test"  description="Some description">
+      <siteMapNode url="~/SiteMap2.aspx" title="Sitemap Test"  description="Some description">
+        <siteMapNode title="first item"  description="first item desc" />
+        <siteMapNode title="second item"  description="second item desc" />
+      </siteMapNode>  
+      <siteMapNode title="first item"  description="first item desc" />
+      <siteMapNode title="second item"  description="second item desc" />
     </siteMapNode>
-  </siteMapNode>
 </siteMap>

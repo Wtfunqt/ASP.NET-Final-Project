@@ -13,14 +13,15 @@
          <tr>
              <td><strong>Password:</strong></td>
              <td style="width: 111px">
-                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="ReqValidPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter your password"></asp:RequiredFieldValidator>"
-             </td>
+                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="ReqValidPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter your password"></asp:RequiredFieldValidator>&nbsp;</td>
          </tr>
          <tr>
              <td>
                  <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-                 <asp:Button ID="btnRegister" runat="server" PostBackUrl="~/Account/Register.aspx" Text="Register" CausesValidation="False" />
+                 </td>
+             <td>    
+             <asp:Button ID="btnRegister" runat="server" PostBackUrl="~/Account/Register.aspx" Text="Register" CausesValidation="False" />
              </td>
          </tr>
      </table>

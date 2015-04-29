@@ -1,13 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="UserControl.aspx.cs" Inherits="UserControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="750px">
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-            <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-            <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-            <asp:BoundField DataField="usertype" HeaderText="usertype" SortExpression="usertype" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button" />
+            <asp:BoundField DataField="id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id" >
+            <ItemStyle Width="15px" />
+            </asp:BoundField>
+            <asp:BoundField DataField="username" HeaderText="User name" SortExpression="username" >
+            <ItemStyle Width="200px" />
+            </asp:BoundField>
+            <asp:BoundField DataField="password" HeaderText="Password" SortExpression="password" >
+            <ItemStyle Width="200px" />
+            </asp:BoundField>
+            <asp:BoundField DataField="usertype" HeaderText="Type of user" SortExpression="usertype" >
+            <ItemStyle Width="100px" />
+            </asp:BoundField>
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#000066" />
         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

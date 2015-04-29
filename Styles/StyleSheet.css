@@ -2,6 +2,32 @@
 
 }
 
+input[type=button], button, input[type=submit] {
+    background: #25A6E1;
+	background: -moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));
+	background: -webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	padding:8px 13px;
+	color:#fff;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size:17px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #1A87B9
+}
+
+#p {
+    color: #1A87D9;
+}
+
+#h1 {
+	color: #1A87B9;
+}
+
 #wrapper {
     width: 1080px;
     margin: auto;
@@ -80,7 +106,7 @@
 #sidebar {
     float: right;
     width: 250px;
-    height: 400px;
+    height: 600px;
     margin: 20px 10px 20px 10px;
     border: 3px solid #E3E3E3;
     overflow:auto;

@@ -9,11 +9,18 @@
                 <asp:SessionParameter Name="username" SessionField="login" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceForAllPlaylistByUserName" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+    <asp:Button ID="btnAddToPlaylist" PostBackUrl="~/Pages/Playlist.aspx" runat="server" OnClick="btnDeleteFromPlaylist_Click" Text="Delete from Playlist" />
+        <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    <asp:Label ID="lblSelectSomething" runat="server" Text="Label" Visible="False"></asp:Label>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceForAllPlaylistByUserName" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="750px" AllowPaging="True">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
-                <asp:BoundField DataField="prodyear" HeaderText="prodyear" SortExpression="prodyear" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button" >
+                <ItemStyle Width="30px" />
+                </asp:CommandField>
+                <asp:BoundField DataField="title" HeaderText="Title of the movie" SortExpression="title" />
+                <asp:BoundField DataField="prodyear" HeaderText="Production Year" SortExpression="prodyear" >
+                <ItemStyle Width="25px" />
+                </asp:BoundField>
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -25,11 +32,8 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-    <asp:Button ID="btnAddToPlaylist" PostBackUrl="~/Pages/Playlist.aspx" runat="server" OnClick="btnDeleteFromPlaylist_Click" Text="Delete from Playlist" />
-    <br /><br /><br /><asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    <br /><br /><br />
     <br />
-    <asp:Label ID="lblSelectSomething" runat="server" Text="Label" Visible="False"></asp:Label>
     <a id="linkToLogin"></a>
-    <h1>Content to be changed!</h1>
-</asp:Content>
+    </asp:Content>
 
