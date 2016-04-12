@@ -7,14 +7,21 @@
              <td><strong>Login:</strong></td>
              <td style="width: 111px">
                  <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="ReqValidName" runat="server" ErrorMessage="Please enter your User Name" ControlToValidate="txtName"></asp:RequiredFieldValidator>
+                 
              </td>
+         </tr>
+         <tr>
+             <td></td>
+             <td><asp:RequiredFieldValidator ID="ReqValidName" runat="server" ErrorMessage="Please enter your User Name" ControlToValidate="txtName"></asp:RequiredFieldValidator></td>
          </tr>
          <tr>
              <td><strong>Password:</strong></td>
              <td style="width: 111px">
                  <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="ReqValidPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter your password"></asp:RequiredFieldValidator>&nbsp;</td>
+                 &nbsp;</td>
+         </tr>
+         <tr><td></td>
+             <td><asp:RequiredFieldValidator ID="ReqValidPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter your password"></asp:RequiredFieldValidator></td>
          </tr>
          <tr>
              <td>
